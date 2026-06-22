@@ -1,0 +1,23 @@
+import random
+
+nested_list = [[random.randint(-10, 10) for _ in range(5)] for _ in range(4)]
+
+print("Исходный вложенный список:")
+for row in nested_list:
+    print(row)
+
+filtered_list = []
+
+for i in range(len(nested_list)):
+    current_filtered_row = []
+
+    for j in range(len(nested_list[i])):
+        if nested_list[i][j] > 0:
+            current_filtered_row.append(nested_list[i][j])
+
+    filtered_list.append(current_filtered_row)
+
+print("Отфильтрованный вложенный список (только >0):")
+for row in filtered_list:
+    print(row)
+print()
