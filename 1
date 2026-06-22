@@ -1,0 +1,23 @@
+import random
+
+rows_count = 4
+cols_count = 4
+nested_list = [[random.randint(1, 100) for _ in range(cols_count)] for _ in range(rows_count)]
+
+print("Исходный вложенный список:")
+for row in nested_list:
+    print(row)
+
+max_element = nested_list[0][0]
+max_row_index = 0
+max_col_index = 0
+
+for i in range(len(nested_list)):
+    for j in range(len(nested_list[i])):
+        if nested_list[i][j] > max_element:
+            max_element = nested_list[i][j]
+            max_row_index = i
+            max_col_index = j
+
+print(f"Максимальный элемент: {max_element}")
+print(f"Позиция: строка {max_row_index+1}, элемент {max_col_index+1}")
